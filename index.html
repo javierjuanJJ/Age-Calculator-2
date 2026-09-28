@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="node_modules/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrapper">
+    <section class="card">
+      <h1 class="title">Age Calculator</h1>
+      <p class="subtitle">Pick your birthdate and find out your exact age in years, months and days.</p>
+
+      <form id="age-form" novalidate>
+        <div class="field">
+          <label for="birthdate">Date of birth</label>
+          <input
+            id="birthdate"
+            name="birthdate"
+            type="text"
+            placeholder="Select a date"
+            autocomplete="off"
+            aria-describedby="error-message"
+          />
+          <p class="error" id="error-message" role="alert" hidden></p>
+        </div>
+
+        <button type="submit" class="btn">Calculate age</button>
+      </form>
+
+      <div class="result" id="result" hidden aria-live="polite">
+        <p class="result-label">Your age is</p>
+        <div class="units">
+          <div class="unit">
+            <span class="value" id="years">0</span>
+            <span class="unit-name" id="years-label">years</span>
+          </div>
+          <div class="unit">
+            <span class="value" id="months">0</span>
+            <span class="unit-name" id="months-label">months</span>
+          </div>
+          <div class="unit">
+            <span class="value" id="days">0</span>
+            <span class="unit-name" id="days-label">days</span>
+          </div>
+        </div>
+        <p class="totals" id="totals"></p>
+        <p class="extra" id="extra"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="node_modules/luxon/build/global/luxon.min.js"></script>
+  <script src="node_modules/flatpickr/dist/flatpickr.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
